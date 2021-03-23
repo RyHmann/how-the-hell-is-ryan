@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>How the hell is Ryan doing?</h1>
+    <h4>Weather</h4>
+    <div class="weather-container">
+        <p>{{ current_temp }}r</p>
+        <p>9:50pm, Mar 24</p>
+    </div>
+    <h4>Current Mood</h4>
+    <h4>Current Projects</h4>
+    <h4>Current View</h4>
+
+{% endblock %}
