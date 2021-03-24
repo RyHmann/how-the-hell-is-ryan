@@ -1,20 +1,23 @@
 {% extends "base.html" %}}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}How's Ryan?{% endblock %}
 
 {% block content %}
-    <h1>How the hell is Ryan doing?</h1>
+    <h1>How the Hell is Ryan doing?</h1>
     <h4>Weather</h4>
     <div class="weather-container">
-        <p>{{ current_time }} | Feels like {{ current_temp_c }}C / {{ current_temp_f }}F | {{ current_description }}</p>
+        <p>{{ current_time }}</p>
+        <p>Feels like {{ weather_data.current_temp_c }}C / {{ weather_data.current_temp_f }}F</p>
+        <p>{{ weather_data.description }}</p>
     </div>
-    <h4>Current Mood</h4>
-        <p>Feeling optimistic about life.</p>
+    <h4>Current Wellbeing</h4>
+        <p>Feeling optimistic about life. &#128516</p>
         <p>Latest tweet:</p>
         <p>Latest Instagram Post:</p>
     <h4>Current Projects</h4>
         <p>Reworking resume, studying coding, Raspberry Pi</p>
     <h4>Current View</h4>
-        <p>[Insert Raspberry Pi image here]</p>
+        <iframe width="560" height="349" src={{ current_view }} frameborder="0" allowfullscreen></iframe>
+        <p id="courtesy-text">Courtesy of Cornish Accounting: https://cornish.co.nz/</p>
 
 {% endblock %}
