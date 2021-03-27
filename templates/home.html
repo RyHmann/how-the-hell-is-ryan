@@ -3,21 +3,31 @@
 {% block title %}How's Ryan?{% endblock %}
 
 {% block content %}
-    <h1>How the Hell is Ryan doing?</h1>
-    <h4>Weather</h4>
-    <div class="weather-container">
-        <p>{{ current_time }}</p>
-        <p>Feels like {{ weather_data.current_temp_c }}C / {{ weather_data.current_temp_f }}F</p>
-        <p>{{ weather_data.description }}</p>
+    <div class="banner-container">
+        <h1>How the Hell is Ryan doing?</h1>
+        <svg viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
+            <path d="M0.00,49.98 C150.00,150.00 271.49,-50.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill:#fff;"></path>
+        </svg>
+
     </div>
-    <h4>Current Wellbeing</h4>
+
+    <div class="weather-container">
+        <h2>Weather</h2>
+        <p class="time-text">{{ current_time }}</p>
+        <p class="weather-text">Feels like {{ weather_data.current_temp_c }}C / {{ weather_data.current_temp_f }}F</p>
+        <p class="weather-text">{{ weather_data.description }}</p>
+    </div>
+    <div class="sketch-container">
+    </div>
+    <h2>Current View</h2>
+        <iframe width="400" height="225" src={{ current_view }} frameborder="0" allowfullscreen></iframe>
+        <p id="courtesy-text">Courtesy of Cornish Accounting: https://cornish.co.nz/</p>
+    <h2>Current Wellbeing</h2>
         <p>Feeling optimistic about life. &#128516</p>
         <p>Latest tweet:</p>
         <p>Latest Instagram Post:</p>
-    <h4>Current Projects</h4>
+    <h2>Current Projects</h2>
         <p>Reworking resume, studying coding, Raspberry Pi</p>
-    <h4>Current View</h4>
-        <iframe width="560" height="349" src={{ current_view }} frameborder="0" allowfullscreen></iframe>
-        <p id="courtesy-text">Courtesy of Cornish Accounting: https://cornish.co.nz/</p>
+
 
 {% endblock %}
