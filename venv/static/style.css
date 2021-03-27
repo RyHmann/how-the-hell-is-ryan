@@ -1,3 +1,11 @@
 html {
     font-family: sans-serif;
+    background: #89ADCF;
+}
+.weather-container {
+    background: rgb(0,0,0,.5);
+    border-radius: 10px;
+}
+h4 {
+    color: blue;
 }
