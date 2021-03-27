@@ -1,8 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from models.weather import WeatherData
 from datetime import datetime
 from models.outlook import Outlook
-
 
 
 app = Flask(__name__)
