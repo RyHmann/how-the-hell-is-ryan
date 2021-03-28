@@ -29,7 +29,7 @@
     </div>
 <div class="ryan-container">
         <h2>Current Wellbeing</h2>
-        <p>Feeling optimistic about life. &#128516</p>
+        <p>{{ ryan_status.current_status }}</p>
         <p>Latest tweet:</p>
         <p>Latest Instagram Post:</p>
     <h2>Current Projects</h2>
@@ -38,7 +38,7 @@
 <div class="current-view-container">
     <h2>Current View</h2>
     <div class="picture-container">
-        <iframe width="400" height="225" src={{ current_view }} frameborder="0" allowfullscreen></iframe>
+        <iframe width="400" height="225" src={{ current_view.url }} frameborder="0" allowfullscreen></iframe>
         <p id="courtesy-text">Courtesy of Cornish Accounting: https://cornish.co.nz/</p>
     </div>
 </div>
