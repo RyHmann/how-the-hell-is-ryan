@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}How's Ryan?{% endblock %}
+
+{% block content %}
+<div class="status-container">
+    <h1>Change Status</h1>
+    <form method="post">
+        <p>Message:
+            <input type="text" name="status">
+        </p>
+        <button type="submit">Update Status</button>
+    </form>
+</div>
+{% endblock %}
