@@ -3,14 +3,20 @@ html {
     background: #89ADCF;
 }
 .banner-container {
-    overflow: hidden;
-    position: relative;
+    position: absolute;
     left: 0px;
     top: 0px;
-    height: 200px;
-    width: auto;
+    width: 100%;
 }
-svg {
+.title-container {
+    background: #fff;
+}
+.wave-container {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+}
+.banner-container-curve {
     display: inline-block;
     position: absolute;
     top: 0px;
@@ -20,11 +26,12 @@ svg {
 .banner-container h1 {
     position: relative;
     color: #4E5260;
+    background: #fff;
     z-index: 2;
 }
 
 .weather-container {
-
+    margin: 150px auto 10px auto;
 }
 .weather-container h4, p {
     color: #fff;
@@ -36,7 +43,7 @@ svg {
     background-image: url("new-zealand-map-with-icon-vector-illustration.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
-    width: 400px;
+    height: 450px;
+    width: 450px;
 }
 

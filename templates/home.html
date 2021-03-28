@@ -4,13 +4,15 @@
 
 {% block content %}
     <div class="banner-container">
-        <h1>How the Hell is Ryan doing?</h1>
-        <svg viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
-            <path d="M0.00,49.98 C150.00,150.00 271.49,-50.00 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill:#fff;"></path>
-        </svg>
-
+        <div class="title-container">
+            <h1>How the Hell is Ryan doing?</h1>
+        </div>
+        <div class="wave-container">
+            <svg class="banner-container-curve" viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
+                <path d="M-14.96,30.08 C149.26,22.20 399.83,-16.28 522.85,14.30 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill:#fff;"></path>
+            </svg>
+        </div>
     </div>
-
     <div class="weather-container">
         <h2>Weather</h2>
         <p class="time-text">{{ current_time }}</p>
