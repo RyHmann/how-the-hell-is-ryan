@@ -2,6 +2,15 @@ html {
     font-family: sans-serif;
     background: #89ADCF;
 }
+h2 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.25em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+p {
+    font-family: 'Merriweather', serif;
+}
 .banner-container {
     position: absolute;
     left: 0px;
@@ -9,7 +18,15 @@ html {
     width: 100%;
 }
 .title-container {
+    text-align: center;
+}
+.title-container h1 {
+    color: #4E5260;
+    padding: 20px;
+    margin: 0px;
     background: #fff;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 2px;
 }
 .wave-container {
     position: relative;
@@ -23,18 +40,14 @@ html {
     left: 0px;
     z-index: 1;
 }
-.banner-container h1 {
-    position: relative;
-    color: #4E5260;
-    background: #fff;
-    z-index: 2;
-}
 
 .weather-container {
-    margin: 150px auto 10px auto;
+    margin: 150px auto 10px 15%;
 }
-.weather-container h4, p {
+.weather-container h2, p {
     color: #fff;
+    padding: 0px;
+    margin: 0px;
 }
 .time-text {
     color: #EB6E4B;
