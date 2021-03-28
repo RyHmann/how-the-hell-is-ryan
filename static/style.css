@@ -28,19 +28,19 @@ p {
     font-family: 'Fredericka the Great', cursive;
     letter-spacing: 2px;
 }
-.wave-container {
+.banner-wave-container {
     position: relative;
     overflow: hidden;
-    height: 50px;
+    height: 150px;
+    width=100vw;
 }
-.banner-container-curve {
+.banner-wave-curve {
     display: inline-block;
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: 1;
 }
-
 .weather-container {
     margin: 150px auto 10px 15%;
 }
@@ -53,10 +53,36 @@ p {
     color: #EB6E4B;
 }
 .sketch-container {
-    background-image: url("new-zealand-map-with-icon-vector-illustration.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+.nz-sketch {
     height: 450px;
     width: 450px;
+    padding: 0px;
 }
-
+.ryan-container {
+    z-index: 2;
+}
+.sketch-wave-container {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width=100vw;
+    margin: -50px 0px 0px 0px;
+}
+.sketch-wave-curve {
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.current-view-container {
+    width: 100%;
+}
+.picture-container {
+    margin: 0px auto;
+}
+.picture-container p {
+    padding: 0px;
+    margin: 0px;
+}
