@@ -2,6 +2,10 @@ html, body {
     background: #89ADCF;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+body {
+    padding: 200px 0 0 0;
 }
 h2 {
     font-family: 'Amatic SC', cursive;
@@ -11,6 +15,7 @@ h2 {
 }
 p {
     font-family: 'Merriweather', serif;
+    font-size: 1em;
 }
 .banner-container {
     position: absolute;
@@ -20,14 +25,11 @@ p {
 }
 .title-container {
     text-align: center;
-}
-.title-container h1 {
-    color: #4E5260;
-    padding: 20px;
-    margin: 0px;
     background: #fff;
-    font-family: 'Fredericka the Great', cursive;
-    letter-spacing: 2px;
+}
+.title-container p {
+    color: #4E5260;
+    padding: 0px 15px 15px 15px;
 }
 .banner-wave-container {
     position: relative;
@@ -43,37 +45,64 @@ p {
     z-index: 1;
 }
 .weather-container {
-    margin: 150px auto 10px 15%;
+    top: 35%;
+    margin: 10px auto 0px 15%;
 }
 .weather-container h2, p {
     color: #fff;
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
 }
 .time-text {
     color: #EB6E4B;
 }
 .sketch-container {
-    width: 100%;
+    width: auto;
+    text-align: center;
+}
+@media screen and (max-width: 600px){
+.title-container h1 {
+    color: #4E5260;
+    font-size: 2.25em;
+    padding: 15px;
     margin: 0px;
+    background: #fff;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 2px;
 }
 .nz-sketch {
-    height: 450px;
-    width: 450px;
-    padding: 0px;
+    max-height: 425px;
+    max-width: 425px;
+    margin: 0px auto;
 }
+}
+@media screen and (min-width: 600px){
+.title-container h1 {
+    color: #4E5260;
+    font-size: 2.5em;
+    padding: 20px;
+    margin: 0px;
+    background: #fff;
+    font-family: 'Fredericka the Great', cursive;
+    letter-spacing: 2px;
+}
+.nz-sketch {
+    max-height: 600px;
+    max-width: 600px;
+    margin: 0px auto;
+}
+}
+
 .ryan-container {
     background: #FF9E53;
     width: 100%;
-    margin: 0px;
-    padding: 0px;
 }
 .sketch-wave-container {
     position: relative;
     overflow: hidden;
-    height: 100px;
-    width: 100%;
-    margin: -50px 0px 0px 0px;
+    height: 150px;
+    width: 100vw;
+    margin: -100px 0px 0px 0px;
     border: 1px solid black;
 }
 .sketch-wave-curve {
@@ -85,13 +114,11 @@ p {
 .current-view-container {
     width: 100%;
     background: #FF9E53;
-    margin: 0px;
-    padding: 0px;
 }
 .picture-container {
     margin: 0px auto;
 }
-.picture-container p {
-    padding: 0px;
-    margin: 0px;
+.picture-container iframe {
+    width: 384px;
+    height: 216px;
 }
