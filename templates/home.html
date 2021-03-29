@@ -21,26 +21,30 @@
     </div>
     <div class="sketch-container">
         <img class="nz-sketch" src="{{ url_for('static', filename='new-zealand-map-with-icon-vector-illustration.jpg') }}">
+    </div>
+    <div class="ryan-container">
         <div class="sketch-wave-container">
             <svg class="sketch-wave-curve" viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
-                <path d="M-26.24,152.47 C255.35,126.80 383.46,84.37 513.25,138.65 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#11426D;"></path>
+                <path d="M-26.24,152.47 C255.35,126.80 383.46,84.37 513.25,138.65 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#blue;"></path>
             </svg>
         </div>
+        <div class="status_container">
+            <h2>Current Wellbeing</h2>
+            <p>{{ ryan_status.current_status }}</p>
+            <p>Latest tweet:</p>
+            <p>Latest Instagram Post:</p>
+        <h2>Current Projects</h2>
+            <p>{{ ryan_status.current_projects }}</p>
+            <p>Current read: {{ ryan_status.current_reads }}</p>
+        </div>
+
     </div>
-<div class="ryan-container">
-        <h2>Current Wellbeing</h2>
-        <p>{{ ryan_status.current_status }}</p>
-        <p>Latest tweet:</p>
-        <p>Latest Instagram Post:</p>
-    <h2>Current Projects</h2>
-        <p>Reworking resume, studying coding, Raspberry Pi</p>
-</div>
-<div class="current-view-container">
-    <h2>Current View</h2>
-    <div class="picture-container">
-        <iframe width="400" height="225" src={{ current_view.url }} frameborder="0" allowfullscreen></iframe>
-        <p id="courtesy-text">Courtesy of Cornish Accounting: https://cornish.co.nz/</p>
+    <div class="current-view-container">
+        <h2>Current View</h2>
+        <div class="picture-container">
+            <iframe width="400" height="225" src={{ current_view.url }} frameborder="0" allowfullscreen></iframe>
+            <p id="courtesy-text">Courtesy of Cornish Accounting: https://cornish.co.nz/</p>
+        </div>
     </div>
-</div>
 
 {% endblock %}
