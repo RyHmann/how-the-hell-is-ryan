@@ -45,8 +45,7 @@ p {
     z-index: 1;
 }
 .weather-container {
-    top: 35%;
-    margin: 10px auto 0px 15%;
+    margin: 1em 0 1em 20%;
 }
 .weather-container h2, p {
     color: #fff;
@@ -74,6 +73,11 @@ p {
     max-height: 425px;
     max-width: 425px;
     margin: 0px auto;
+    z-index: 1;
+}
+.picture-container iframe {
+    width: 384px;
+    height: 216px;
 }
 }
 @media screen and (min-width: 600px){
@@ -90,26 +94,39 @@ p {
     max-height: 600px;
     max-width: 600px;
     margin: 0px auto;
+    z-index: 1;
+}
+.picture-container iframe {
+    min-width: 600px;
+    min-height: 360px;
 }
 }
 
 .ryan-container {
     background: #FF9E53;
     width: 100%;
+    z-index: 2;
 }
-.sketch-wave-container {
+.ryan-container h2, p {
+    margin: 0px;
+    padding: 0px;
+}
+.ryan-wave-container {
     position: relative;
+    background: #89ADCF;
     overflow: hidden;
-    height: 150px;
+    height: 100px;
     width: 100vw;
-    margin: -100px 0px 0px 0px;
-    border: 1px solid black;
+    margin: -50px 0px 0px 0px;
 }
-.sketch-wave-curve {
+.ryan-wave-curve {
     display: inline-block;
     position: absolute;
     top: 0px;
     left: 0px;
+}
+.status-container {
+    margin-left: 20%;
 }
 .current-view-container {
     width: 100%;
@@ -117,8 +134,4 @@ p {
 }
 .picture-container {
     margin: 0px auto;
-}
-.picture-container iframe {
-    width: 384px;
-    height: 216px;
 }

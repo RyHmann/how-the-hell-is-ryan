@@ -6,7 +6,7 @@
     <div class="banner-container">
         <div class="title-container">
             <h1>How the Hell<br>is Ryan?</h1>
-            <p>A website to answer<br>your important questions</p>
+            <p>a website to answer your<br>important questions</p>
         </div>
         <div class="banner-wave-container">
             <svg class="banner-wave-curve" viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
@@ -22,12 +22,11 @@
     </div>
     <div class="sketch-container">
         <img class="nz-sketch" src="{{ url_for('static', filename='new-zealand-map-with-icon-vector-illustration.jpg') }}">
-        <p>Current Location: Wellington, New Zealand</p>
     </div>
     <div class="ryan-container">
-        <div class="sketch-wave-container">
-            <svg class="sketch-wave-curve" viewBox="0 0 500 150"preserveAspectRatio="none">
-                <path d="M-8.19,107.07 C99.04,153.45 324.21,166.27 502.54,90.28 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#fff;"></path>
+        <div class="ryan-wave-container">
+            <svg class="ryan-wave-curve" viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
+                <path d="M-10.44,24.17 C103.55,95.22 325.90,79.43 540.35,10.35 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#FF9E53;"></path>
             </svg>
         </div>
         <div class="status_container">
@@ -35,11 +34,10 @@
             <p>{{ ryan_status.current_status }}</p>
             <p>Latest tweet:</p>
             <p>Latest Instagram Post:</p>
-        <h2>What's he doing?</h2>
+            <h2>What's he doing?</h2>
             <p>{{ ryan_status.current_projects }}</p>
             <p>Current read: {{ ryan_status.current_reads }}</p>
         </div>
-
     </div>
     <div class="current-view-container">
         <h2>What does it look like?</h2>
