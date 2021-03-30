@@ -1,8 +1,8 @@
 html, body {
     background: #89ADCF;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 body {
     padding: 200px 0 0 0;
@@ -53,7 +53,7 @@ p {
     padding: 0px;
 }
 .time-text {
-    color: #EB6E4B;
+    color: #eb4e15;
 }
 .sketch-container {
     width: auto;
@@ -63,11 +63,14 @@ p {
 .title-container h1 {
     color: #4E5260;
     font-size: 2.25em;
-    padding: 15px;
+    padding: .5em 1.5em;
     margin: 0px;
     background: #fff;
     font-family: 'Fredericka the Great', cursive;
     letter-spacing: 2px;
+}
+.title-container p {
+    padding: .5em 1.5em;
 }
 .nz-sketch {
     max-height: 425px;
@@ -103,19 +106,21 @@ p {
 }
 
 .ryan-container {
-    background: #FF9E53;
-    width: 100%;
+    background: #2D776A;
     z-index: 2;
+    width: 100%
 }
-.ryan-container h2, p {
-    margin: 0px;
-    padding: 0px;
+.ryan-container h2 {
+    color: #FFCA39;
+}
+.ryan-container p {
+    color: #fff;
 }
 .ryan-wave-container {
     position: relative;
     background: #89ADCF;
     overflow: hidden;
-    height: 100px;
+    height: 5em;
     width: 100vw;
     margin: -50px 0px 0px 0px;
 }
@@ -125,13 +130,23 @@ p {
     top: 0px;
     left: 0px;
 }
-.status-container {
-    margin-left: 20%;
+.update-container {
+    position: block;
+    margin: .1em 1.25em;
+    padding: 10px 20px;
 }
 .current-view-container {
     width: 100%;
-    background: #FF9E53;
+    margin: 0px;
+    padding: 0px;
+}
+.current-view-container h2 {
+    padding: 10px 20px;
 }
 .picture-container {
     margin: 0px auto;
+}
+.courtesy-text {
+    text-decoration: none;
+    color: #000;
 }

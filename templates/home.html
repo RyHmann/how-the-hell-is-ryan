@@ -5,8 +5,8 @@
 {% block content %}
     <div class="banner-container">
         <div class="title-container">
-            <h1>How the Hell<br>is Ryan?</h1>
-            <p>a website to answer your<br>important questions</p>
+            <h1>How the Hell is Ryan?</h1>
+            <p>a website to answer your important questions</p>
         </div>
         <div class="banner-wave-container">
             <svg class="banner-wave-curve" viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
@@ -26,25 +26,29 @@
     <div class="ryan-container">
         <div class="ryan-wave-container">
             <svg class="ryan-wave-curve" viewBox="0 0 500 150"preserveAspectRatio="xMinYMin meet">
-                <path d="M-10.44,24.17 C103.55,95.22 325.90,79.43 540.35,10.35 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#FF9E53;"></path>
+                <path d="M-10.44,24.17 C103.55,95.22 325.90,79.43 540.35,10.35 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#2D776A;"></path>
             </svg>
         </div>
-        <div class="status_container">
+        <div class="update-container">
             <h2>How's he doing?</h2>
             <p>{{ ryan_status.current_status }}</p>
             <p>Latest tweet:</p>
             <p>Latest Instagram Post:</p>
+        </div>
+        <div class="update-container">
             <h2>What's he doing?</h2>
             <p>{{ ryan_status.current_projects }}</p>
             <p>Current read: {{ ryan_status.current_reads }}</p>
         </div>
-    </div>
-    <div class="current-view-container">
-        <h2>What does it look like?</h2>
-        <div class="picture-container">
-            <iframe src={{ current_view.url }} frameborder="0" allowfullscreen></iframe>
-            <p id="courtesy-text">Courtesy of Cornish Accounting: https://cornish.co.nz/</p>
+        <div class="current-view-container">
+            <h2>What does it look like?</h2>
+            <div class="picture-container">
+                <iframe src={{ current_view.url }} frameborder="0" allowfullscreen></iframe>
+                <a class="courtesy-text" href="https://cornish.co.nz" target="_blank">Stream courtesy of Cornish Accounting</a>
+            </div>
         </div>
     </div>
+
+
 
 {% endblock %}
