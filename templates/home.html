@@ -31,24 +31,23 @@
         </div>
         <div class="update-container">
             <h2>How's he doing?</h2>
+            <p>Current Wellbeing:</p>
             <p>{{ ryan_status.current_status }}</p>
             <p>Latest tweet:</p>
             <p>Latest Instagram Post:</p>
         </div>
         <div class="update-container">
             <h2>What's he doing?</h2>
+            <p>Current Projects:</p>
             <p>{{ ryan_status.current_projects }}</p>
-            <p>Current read: {{ ryan_status.current_reads }}</p>
+            <p>Current Read:</p>
+            <p>{{ ryan_status.current_reads }}</p>
         </div>
         <div class="current-view-container">
-            <h2>What does it look like?</h2>
+            <h2>What's it look like?</h2>
             <div class="picture-container">
-                <iframe src={{ current_view.url }} frameborder="0" allowfullscreen></iframe>
-                <a class="courtesy-text" href="https://cornish.co.nz" target="_blank">Stream courtesy of Cornish Accounting</a>
+                <iframe class="live-stream" src={{ current_view.url }} frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
-
-
-
 {% endblock %}
