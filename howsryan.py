@@ -22,11 +22,12 @@ def welcome():
 def set_status():
     try:
         if request.method == "POST":
-            current_status = {"message": request.form['status']}
+            current_status = {"message": request.form['status'], "projects": request.form["projects"], "current_reads": request.form["reads"]}
             data_access.update_status(current_status)
             return redirect(url_for('welcome'))
 
         else:
-                return render_template("status.html")
+            ryan_status = RyanStatus()
+            return render_template("status.html", ryan_status=ryan_status)
     except IndexError:
         abort(404)

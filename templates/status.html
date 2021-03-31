@@ -6,8 +6,14 @@
 <div class="status-container">
     <h1>Change Status</h1>
     <form method="post">
-        <p>Message:
-            <input type="text" name="status">
+        <p>Current Status:
+            <input type="text" name="status" value="{{ ryan_status.current_status }}">
+        </p>
+        <p>Current Projects:
+            <input type="text" name="projects" value="{{ ryan_status.current_projects }}">
+        </p>
+        <p>Current Reads:
+            <input type="text" name="reads" value="{{ ryan_status.current_reads }}">
         </p>
         <button type="submit">Update Status</button>
     </form>
