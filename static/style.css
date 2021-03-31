@@ -103,6 +103,9 @@ p {
     min-width: 600px;
     min-height: 360px;
 }
+.banner-wave-container, .ryan-wave-container {
+    display: none;
+}
 }
 
 .ryan-container {
