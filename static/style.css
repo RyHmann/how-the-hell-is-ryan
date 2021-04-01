@@ -61,6 +61,16 @@ p {
     text-align: center;
 }
 @media screen and (max-width: 600px){
+.update-container {
+    width: 250px;
+    margin: 0px auto;
+    padding: .5em 2em;
+}
+.current-view-container {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
 .title-container h1 {
     color: #4E5260;
     font-size: 2.25em;
@@ -84,7 +94,9 @@ p {
     height: calc(100vw * 0.5625);
 }
 }
+
 @media screen and (min-width: 600px){
+
 .title-container h1 {
     color: #4E5260;
     font-size: 2.5em;
@@ -107,8 +119,23 @@ p {
 .banner-wave-container, .ryan-wave-container {
     display: none;
 }
-.weather-container, .sketch-container, .ryan-container {
-    display: inline-block;
+.ryan-container {
+    display: grid;
+    grid-template-areas:
+        'top-left top-right'
+        'bot-left bot-right';
+}
+.update-container {
+    display: block;
+    width: 400px;
+}
+.top { grid-area: top-left; border: 2px solid red; }
+.bottom { grid-area: bot-left; border: 2px solid green;}
+.current-view-container { grid-row: top-right / bot-right; border: 2px solid blue;}
+
+.live-stream {
+    width: 288px;
+    height: 108px;
 }
 }
 
@@ -136,16 +163,6 @@ p {
     position: absolute;
     top: 0px;
     left: 0px;
-}
-.update-container {
-    width: 250px;
-    margin: 0px auto;
-    padding: .5em 2em;
-}
-.current-view-container {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
 }
 .current-view-container h2 {
     text-align: center;
