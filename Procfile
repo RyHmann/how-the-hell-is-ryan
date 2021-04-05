@@ -1,1 +1,1 @@
-web: gunicorn app:howsryan
+web: gunicorn howsryan:app
