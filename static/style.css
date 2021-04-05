@@ -129,9 +129,9 @@ p {
     display: block;
     width: 400px;
 }
-.top { grid-area: top-left; border: 2px solid red; }
-.bottom { grid-area: bot-left; border: 2px solid green;}
-.current-view-container { grid-row: top-right / bot-right; border: 2px solid blue;}
+.top { grid-area: top-left; }
+.bottom { grid-area: bot-left; }
+.current-view-container { grid-row: top-right / bot-right; }
 
 .live-stream {
     width: 288px;
