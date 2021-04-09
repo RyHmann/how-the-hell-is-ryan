@@ -8,7 +8,7 @@ class FormatTimeByUTC:
         self.time_zone = timezone(self.utc_offset)
         self.current_time = datetime.now(self.time_zone)
         self.date = self.get_current_date()
-        self.time = self.current_time.strftime("%#I:%M%p")
+        self.time = self.current_time.strftime("%-I:%M%p")
 
     def get_current_date(self):
         day = int(self.current_time.strftime("%-d"))
