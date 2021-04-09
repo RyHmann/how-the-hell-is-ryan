@@ -1,8 +1,8 @@
 from flask import Flask, render_template, url_for, request, abort, redirect
 from models.weather import WeatherData
-from datetime import datetime
 from models.outlook import Outlook
 from models.ryanstatus import RyanStatus
+from models.nztime import FormatTimeByUTC
 import models.howsryanda as data_access
 
 
@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome():
-    current_time = datetime.now().strftime("%I:%M%p")
+    current_time = FormatTimeByUTC(12)
     current_view = Outlook()
     weather_data = WeatherData()
     ryan_status = RyanStatus()

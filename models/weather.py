@@ -1,5 +1,6 @@
 import requests
-import json
+from datetime import datetime, timezone, timedelta
+
 '''
 A class that populates itself with weather data from openweathermap.org's api
 '''
@@ -15,4 +16,12 @@ class WeatherData:
         self.wind_direction = self.weather_data["wind"]["deg"]
         self.current_temp_c = round((self.current_temp - 273.15), 1)
         self.current_temp_f = round((self.current_temp_c * (9/5) + 32), 0)
+
+    def get_ordinal_date_suffix(day):
+        if 4 <= day <= 20 or 24 <= day <= 30:
+            suffix = "th"
+            return suffix
+        else:
+            suffix = ["st", "nd", "rd"][day % 10 - 1]
+            return suffix
 
