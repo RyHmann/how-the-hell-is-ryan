@@ -11,9 +11,9 @@ class FormatTimeByUTC:
         self.time = self.current_time.strftime("%#I:%M%p")
 
     def get_current_date(self):
-        day = int(self.current_time.strftime("%#d"))
+        day = int(self.current_time.strftime("%-d"))
         ordinal_suffix = self.get_ordinal_date_suffix(day)
-        formatted_date = self.current_time.strftime("%A %B %#d" + ordinal_suffix)
+        formatted_date = self.current_time.strftime("%A %B %-d" + ordinal_suffix)
         return formatted_date
 
     def get_ordinal_date_suffix(self, day):
