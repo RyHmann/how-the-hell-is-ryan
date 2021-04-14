@@ -8,12 +8,13 @@ class FormatTimeByUTC:
         self.time_zone = timezone(self.utc_offset)
         self.current_time = datetime.now(self.time_zone)
         self.date = self.get_current_date()
-        self.time = self.current_time.strftime("%-I:%M%p")
+        self.time = self.current_time.strftime("%#I:%M%p")
 
     def get_current_date(self):
-        day = int(self.current_time.strftime("%-d"))
+        '''For windows '#' removes the leading zero, on Unix '-' removes the leading zero'''
+        day = int(self.current_time.strftime("%#d"))
         ordinal_suffix = self.get_ordinal_date_suffix(day)
-        formatted_date = self.current_time.strftime("%A %B %-d" + ordinal_suffix)
+        formatted_date = self.current_time.strftime("%A %B %#d" + ordinal_suffix)
         return formatted_date
 
     def get_ordinal_date_suffix(self, day):

@@ -1,9 +1,9 @@
 from flask import Flask, render_template, url_for, request, abort, redirect
-from models.weather import WeatherData
-from models.outlook import Outlook
-from models.ryanstatus import RyanStatus
-from models.nztime import FormatTimeByUTC
-import models.howsryanda as data_access
+from .support.weather import WeatherData
+from .support.outlook import Outlook
+from .support.ryanstatus import RyanStatus
+from .support.nztime import FormatTimeByUTC
+from .support.howsryanda import update_status
 
 
 app = Flask(__name__)
@@ -23,7 +23,7 @@ def set_status():
     try:
         if request.method == "POST":
             current_status = {"message": request.form['status'], "projects": request.form["projects"], "current_reads": request.form["reads"]}
-            data_access.update_status(current_status)
+            update_status(current_status)
             return redirect(url_for('welcome'))
 
         else:
