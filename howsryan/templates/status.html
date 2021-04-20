@@ -1,0 +1,21 @@
+{% extends "base-form.html" %}
+
+{% block title %}Update Status{% endblock %}
+
+{% block content %}
+<div class="status-container">
+    <h1>Change Status</h1>
+    <form method="post">
+        <p>Current Status:
+            <textarea class="status-input" type="text" name="status">{{ ryan_status.current_status }}</textarea>
+        </p>
+        <p>Current Projects:
+            <textarea class="status-input" type="text" name="projects">{{ ryan_status.current_projects }}</textarea>
+        </p>
+        <p>Current Reads:
+            <input class="status-input" type="text" name="reads" value="{{ ryan_status.current_reads }}">
+        </p>
+        <button type="submit">Update Status</button>
+    </form>
+</div>
+{% endblock %}

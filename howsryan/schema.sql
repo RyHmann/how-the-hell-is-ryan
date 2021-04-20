@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS status;
+
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE status (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    wellbeing TEXT NOT NULL,
+    projects TEXT NOT NULL,
+    books TEXT NOT NULL
+);
