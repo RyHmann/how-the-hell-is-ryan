@@ -2,11 +2,13 @@ import sqlite3
 import click
 from flask import current_app, g
 from flask.cli import with_appcontext
+from werkzeug.security import check_password_hash, generate_password_hash
 
 
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
+    app.cli.add_command(seed_db_command)
 
 
 def init_db():
@@ -21,6 +23,29 @@ def init_db():
 def init_db_command():
     init_db()
     click.echo('Database initialized')
+
+
+@click.command('seed-db')
+@with_appcontext
+def seed_db_command():
+    seed_db()
+    click.echo('Database Seeded')
+
+
+def seed_db():
+    db = get_db()
+
+    db.execute(
+        'INSERT INTO user (username, password)'
+        ' VALUES (?, ?)',
+        ('ryan', generate_password_hash('admin'))
+    )
+    db.commit()
+    db.execute(
+        'INSERT INTO status (wellbeing, projects, books)'
+        ' VALUES ("Feeling motivated", "Finishing up The Pantry, updating HowsRyan", "Clean Code by Uncle Bob")'
+    )
+    db.commit()
 
 
 def get_db():

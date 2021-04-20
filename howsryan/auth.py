@@ -26,7 +26,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         db = get_db()
-        errer = None
+        error = None
         user = db.execute(
             'SELECT * FROM user WHERE username = ?', (username,)
         ).fetchone()
@@ -42,7 +42,7 @@ def login():
             return redirect(url_for('index'))
 
         flash(error)
-    return render_template('auth/login.html')
+    return render_template('login.html')
 
 
 @bp.route('/logout')
