@@ -1,5 +1,5 @@
 from flask import  (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, redirect, render_template, request, url_for
 )
 from werkzeug.exceptions import abort
 from howsryan.db import get_db
@@ -8,6 +8,7 @@ from .support.weather import WeatherData
 from .support.status import CurrentStatus
 from .support.outlook import Outlook
 from .support.nztime import FormatTimeByUTC
+from .support.tweet import Tweet
 
 bp = Blueprint('index', __name__)
 
@@ -22,12 +23,14 @@ def index():
     current_time = FormatTimeByUTC(12)
     current_view = Outlook()
     weather_data = WeatherData()
+    recent_tweet = Tweet()
     return render_template(
         "home.html",
         weather_data=weather_data,
         current_time=current_time,
         ryan_status=ryan_status,
         current_view=current_view,
+        recent_tweet=recent_tweet
     )
 
 

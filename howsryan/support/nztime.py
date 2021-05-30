@@ -12,9 +12,9 @@ class FormatTimeByUTC:
 
     def get_current_date(self):
         '''For windows '#' removes the leading zero, on Unix '-' removes the leading zero'''
-        day = int(self.current_time.strftime("%#d"))
+        day = int(self.current_time.strftime("%-d"))
         ordinal_suffix = self.get_ordinal_date_suffix(day)
-        formatted_date = self.current_time.strftime("%A %B %#d" + ordinal_suffix)
+        formatted_date = self.current_time.strftime("%A %B %-d" + ordinal_suffix)
         return formatted_date
 
     def get_ordinal_date_suffix(self, day):
