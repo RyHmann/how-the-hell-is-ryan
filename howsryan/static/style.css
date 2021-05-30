@@ -147,7 +147,7 @@ p {
 .ryan-container h2 {
     color: #FFCA39;
 }
-.ryan-container p {
+.ryan-container {
     color: #fff;
 }
 .ryan-wave-container {
@@ -168,3 +168,53 @@ p {
     text-align: center;
 }
 
+.text-username {
+    color: black;
+    display: inline;
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+}
+.text-light {
+    font-family: Arial, sans-serif;
+    color: grey;
+    font-weight: 100;
+}
+.avatar-panel {
+    width: 50px;
+    margin-right: 10px;
+}
+.avatar {
+    border-radius: 100px;
+    width: 50px;
+}
+@media only screen and (min-width: 1400px) {
+    .tweet-container {
+        width: 80%;
+    }
+  }
+.tweet-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid lightgrey;
+    padding: 15px;
+    background: #fff;
+}
+.tweet-header p, span, time {
+    margin-right: 5px;
+}
+.tweet-header span::after {
+    content: " \2022"
+}
+.tweet-panel {
+    display: flex;
+    flex-direction: column;
+}
+.tweet-body p {
+    font-family: Helvetica, sans-serif;
+    color: black;
+}
+.tweet-media {
+    width: 100%;
+    padding: 20px 0 10px 0;
+    border-radius: 20px;
+}

@@ -34,9 +34,28 @@
             <h2>How's he doing?</h2>
             <p>Current Wellbeing:</p>
             <p>{{ ryan_status.current_status }}</p>
-            <p>Latest tweet: Not Currently Available</p>
-            <p>Latest Instagram Post: Not Currently Available</p>
+            <p>Latest tweet:</p>
         </div>
+        <div class="tweet-container">
+                <div class="avatar-panel">
+                    <a href={{ recent_tweet.tweet_url }} target="_blank">
+                        <img class="avatar" src="https://pbs.twimg.com/profile_images/1250244078530228224/lMziGXN3_400x400.jpg">
+                    </a>
+                </div>
+                <div class="tweet-panel">
+                    <div class="tweet-header">
+                        <p class="text-username">Ryan Heitmann</p><span class="text-light">@HeitmannRyan</span><time class="text-light">{{ recent_tweet.tweet_created }}</time>
+                    </div>
+                    <div class="tweet-body">
+                        <p>
+                            {{ recent_tweet.tweet_text }}
+                        </p>
+                        <a href={{ recent_tweet.tweet_url }} target="_blank">
+                            <img class="tweet-media" src={{ recent_tweet.tweet_img_url }}>
+                        </a>
+                    </div>
+                </div>
+            </div>
         <div class="update-container bottom">
             <h2>What's he doing?</h2>
             <p>Current Projects:</p>
