@@ -1,0 +1,6 @@
+weather_api_key = "id=2179537&appid=a84b5238c6d1533e7f7baaf8023abca4"
+twit_api_key = "Qv7h5Pb8esnq0E4IKNTvdSDj0"
+twit_api_secret_key = "9NYfLxhOhr6uvzSCgWXl0qSJds1TMCSCHXzdSEaio3Y4UzDkva"
+twit_bearer_token = "AAAAAAAAAAAAAAAAAAAAAAEOPAEAAAAAJFU77d2OW4yzgMo54HNNRPevsco%3D3r53kxgLBDp7pu2v1FVZxmHwgCxUYyHM3QJwlel86WbRivH3p5"
+twit_access_token = "1250237559826829313-WGoqSlEVdNMyBmvyKCOjUR1HbpQYlH"
+twit_access_token_secret = "jN06fb20ad1a4XVcgTBcjjeivP0AenmM3NZ5anO1vh92N"
