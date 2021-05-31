@@ -1,1 +1,1 @@
-web: gunicorn howsryan:app
+web: gunicorn howsryan:create_app()
