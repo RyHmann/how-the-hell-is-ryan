@@ -1,5 +1,5 @@
 import requests
-import howsryan.config
+import config
 from datetime import datetime
 
 
@@ -8,7 +8,7 @@ class Tweet:
         self.url = "https://api.twitter.com/2/users/1250237559826829313/tweets?expansions=attachments" \
                            ".media_keys&tweet.fields=created_at,attachments&media.fields=url,preview_image_url"
         self.headers = {
-            'Authorization': 'Bearer ' + howsryan.config.twit_bearer_token
+            'Authorization': 'Bearer ' + config.twit_bearer_token
         }
         self.twitter_data = requests.request("GET", self.url, headers=self.headers).json()
         self.recent_tweet = self.get_tweet(self.twitter_data)
