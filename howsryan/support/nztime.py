@@ -1,4 +1,5 @@
 from datetime import datetime, timezone, timedelta
+import platform
 
 
 class FormatTimeByUTC:
@@ -11,10 +12,15 @@ class FormatTimeByUTC:
         self.time = self.current_time.strftime("%#I:%M%p")
 
     def get_current_date(self):
-        '''For windows '#' removes the leading zero, on Unix '-' removes the leading zero'''
-        day = int(self.current_time.strftime("%-d"))
+        current_platform = platform.system()
+        string_format_char = ""
+        if current_platform == "Linux":
+            string_format_char = "-"
+        else:
+            string_format_char = "#"
+        day = int(self.current_time.strftime(f"%{string_format_char}d"))
         ordinal_suffix = self.get_ordinal_date_suffix(day)
-        formatted_date = self.current_time.strftime("%A %B %-d" + ordinal_suffix)
+        formatted_date = self.current_time.strftime(f"%A %B %{string_format_char}d" + ordinal_suffix)
         return formatted_date
 
     def get_ordinal_date_suffix(self, day):

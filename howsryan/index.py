@@ -2,7 +2,7 @@ from flask import  (
     Blueprint, redirect, render_template, request, url_for
 )
 from werkzeug.exceptions import abort
-from howsryan.db import get_db
+from howsryan.db_sql import get_db
 from .auth import login_required
 from .support.weather import WeatherData
 from .support.status import CurrentStatus

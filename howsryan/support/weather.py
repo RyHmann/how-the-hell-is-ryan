@@ -1,5 +1,5 @@
 import requests
-import howsryan.config
+import config
 
 '''
 A class that populates itself with weather data from openweathermap.org's api
@@ -8,7 +8,7 @@ A class that populates itself with weather data from openweathermap.org's api
 
 class WeatherData:
     def __init__(self):
-        self.url = "http://api.openweathermap.org/data/2.5/weather?" + howsryan.config.weather_api_key
+        self.url = "http://api.openweathermap.org/data/2.5/weather?" + config.weather_api_key
         self.weather_data = requests.get(self.url).json()
         self.current_temp = self.weather_data["main"]["feels_like"]
         self.description = self.weather_data["weather"][0]["description"]

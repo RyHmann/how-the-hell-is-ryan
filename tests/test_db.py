@@ -1,6 +1,6 @@
 import sqlite3
 import pytest
-from howsryan.db import get_db
+from howsryan.db_sql import get_db
 
 
 def test_get_close_db(app):
