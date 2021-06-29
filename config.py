@@ -1,7 +1,8 @@
 import os
-import dotenv
+from dotenv import load_dotenv
 import psycopg2
 from configparser import ConfigParser
+load_dotenv()
 
 
 

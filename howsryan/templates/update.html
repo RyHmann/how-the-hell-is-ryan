@@ -1,0 +1,38 @@
+{% extends "base-form.html" %}
+
+{% block title %}Update Status{% endblock %}
+
+{% block content %}
+<div class="status-container">
+    <h1>Change Status</h1>
+    <div>
+        <fieldset>
+            <legend>Update Ryan's Status</legend>
+            <div>
+                {{ form.book_title.label }}
+                {{ form.book_title }}
+            </div>
+            <div>
+                {{ form.book_author.label }}
+                {{ form.author }}
+            </div>
+            <div>
+                {{ form.status.label }}
+                {{ form.status }}
+            </div>
+            <div>
+                {{ form.project.label }}
+                {{ form.project }}
+            </div>
+            <div>
+                {{ form.su.label }}
+                {{ form.author }}
+            </div>
+        </fieldset>
+        <div>
+            {{ form.submit }}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

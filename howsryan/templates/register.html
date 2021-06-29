@@ -1,0 +1,34 @@
+{% extends "base-form.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+    <form method="post" action="">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Create an account</legend>
+            <div>
+                {{ form.username.label }}
+                {{ form.username }}
+            </div>
+            <div>
+                {{ form.email.label }}
+                {{ form.email }}
+            </div>
+            <div>
+                {{ form.password.label }}
+                {{ form.password }}
+            </div>
+            <div>
+                {{ form.confirm_password.label }}
+                {{ form.confirm_password }}
+            </div>
+        </fieldset>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+    <div>
+        Already have an account? <a href="{{ url_for('login') }}">Sign In</a>
+    </div>
+{% endblock %}

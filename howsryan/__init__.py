@@ -2,7 +2,7 @@ import os
 from flask import Flask
 from . import auth
 from . import index
-from flask_sqlalchemy import SQLAlchemy
+from howsryan.database import db_session
 
 
 app = Flask(__name__, instance_relative_config=True)
@@ -15,9 +15,12 @@ except OSError:
     pass
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
 app.register_blueprint(auth.bp)
 app.register_blueprint(index.bp)
 app.add_url_rule('/', endpoint='index')
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
 
 

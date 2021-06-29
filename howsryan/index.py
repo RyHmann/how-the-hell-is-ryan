@@ -1,85 +1,67 @@
-from flask import  (
-    Blueprint, redirect, render_template, request, url_for
+from flask import (
+    Blueprint, redirect, render_template, request, url_for, flash
 )
 from werkzeug.exceptions import abort
-from howsryan.db_sql import get_db
 from .auth import login_required
 from .support.weather import WeatherData
-from .support.status import CurrentStatus
 from .support.outlook import Outlook
 from .support.nztime import FormatTimeByUTC
 from .support.tweet import Tweet
+from howsryan.database import db_session
+from howsryan.forms import UpdateForm
+from howsryan.models import Book, Status, Project
 
 bp = Blueprint('index', __name__)
 
 
 @bp.route('/')
 def index():
-    existing_status = get_recent_status()
-    ryan_status = CurrentStatus()
-    ryan_status.current_status = existing_status[1]
-    ryan_status.current_reads = existing_status[2]
-    ryan_status.current_projects = existing_status[3]
     current_time = FormatTimeByUTC(12)
+    print(current_time.date)
+    print(current_time.time)
     current_view = Outlook()
     weather_data = WeatherData()
     recent_tweet = Tweet()
+    current_book = get_current_book()
+    current_status = get_current_status()
+    current_project = get_current_project()
     return render_template(
         "home.html",
-        weather_data=weather_data,
-        current_time=current_time,
-        ryan_status=ryan_status,
-        current_view=current_view,
-        recent_tweet=recent_tweet
+        weather_data_vm=weather_data,
+        current_time_vm=current_time,
+        current_book_vm=current_book,
+        current_status_vm=current_status,
+        current_project_vm=current_project,
+        current_view_vm=current_view,
+        recent_tweet_vm=recent_tweet
     )
 
 
 @bp.route('/update', methods=('GET', 'POST'))
 @login_required
 def update():
-    try:
-        status = get_recent_status()
-        if request.method == 'POST':
-
-            updated_status = request.form['status']
-            updated_projects = request.form['projects']
-            updated_reads = request.form['reads']
-
-            if status is not None:
-                db = get_db()
-                db.execute(
-                    'UPDATE status SET wellbeing = ?, projects = ?, books = ?',
-                    (updated_status, updated_projects, updated_reads)
-                )
-                db.commit()
-                return redirect(url_for('index'))
-            else:
-                db = get_db()
-                db.execute(
-                    'INSERT INTO status (wellbeing, projects, books)'
-                    ' VALUES (?, ?, ?)',
-                    (updated_status, updated_projects, updated_reads)
-                )
-                db.commit()
-                return redirect(url_for('index'))
-
-        ryan_status = CurrentStatus()
-        ryan_status.current_status = status[1]
-        ryan_status.current_projects = status[2]
-        ryan_status.current_reads = status[3]
-        return render_template("status.html", ryan_status=ryan_status)
-    except IndexError:
-        abort(404)
+    form = UpdateForm()
+    if form.validate_on_submit():
+        updated_book = Book(title=form.book_title.data, author=form.book_author.data)
+        updated_status = Status(status=form.status.data)
+        updated_project = Project(project=form.project.data)
+        db_session.add(updated_book)
+        db_session.add(updated_status)
+        db_session.add(updated_project)
+        db_session.commit()
+        flash("Update successful")
+        return redirect(url_for("index.html"))
+    return render_template("update.html", title="Update Ryan", form=form)
 
 
-def get_recent_status():
-    db = get_db()
-    status = db.execute(
-        'SELECT *'
-        ' FROM status'
-        ' ORDER BY id DESC' 
-        ' LIMIT 1'
-    ).fetchone()
-    return status
+def get_current_book():
+    return Book.query.order_by('id').first()
 
+
+def get_current_status():
+    return Status.query.order_by('id').first()
+
+
+def get_current_project():
+    return Project.query.order_by('id').first()
 

@@ -3,9 +3,8 @@ import platform
 
 
 class FormatTimeByUTC:
-    def __init__(self, int):
-        self.offset = int
-        self.utc_offset = timedelta(hours=self.offset)
+    def __init__(self, time_offset):
+        self.utc_offset = timedelta(hours=time_offset)
         self.time_zone = timezone(self.utc_offset)
         self.current_time = datetime.now(self.time_zone)
         self.date = self.get_current_date()
