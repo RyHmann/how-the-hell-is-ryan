@@ -16,8 +16,8 @@
     </div>
     <div class="weather-container">
         <h2>How's the weather?</h2>
-        <p class="time-text">{{ current_time_vm.date }}</p>
-        <p class="time-text">{{ current_time_vm.time }}</p>
+        <p class="orange-text">{{ current_time_vm.date }}</p>
+        <p class="orange-text">{{ current_time_vm.time }}</p>
         <p class="weather-text">{{ weather_data_vm.description }}</p>
         <p class="weather-text">Feels like {{ weather_data_vm.current_temp_c }}C / {{ weather_data_vm.current_temp_f }}F</p>
     </div>
@@ -32,9 +32,9 @@
         </div>
         <div class="update-container top">
             <h2>How's he doing?</h2>
-            <p>Current Wellbeing:</p>
+            <p class="subheading-text">Current Wellbeing:</p>
             <p>{{ current_status_vm.mood }}</p>
-            <p>Latest tweet:</p>
+            <p class="subheading-text">Latest tweet:</p>
         </div>
         <div class="tweet-container">
                 <div class="avatar-panel">
@@ -58,9 +58,9 @@
             </div>
         <div class="update-container bottom">
             <h2>What's he doing?</h2>
-            <p>Current Projects:</p>
+            <p class="subheading-text">Current Projects:</p>
             <p>{{ current_project_vm.project }}</p>
-            <p>Current Read:</p>
+            <p class="subheading-text">Current Read:</p>
             <p>{{ current_book_vm.title }}</p>
             <p>by {{ current_book_vm.author }}</p>
         </div>

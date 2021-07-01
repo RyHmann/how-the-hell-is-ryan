@@ -53,8 +53,12 @@ p {
     margin: 0px;
     padding: 0px;
 }
-.time-text {
+.orange-text {
     color: #eb4e15;
+}
+.subheading-text {
+    margin: 10px 0px;
+    color: #FF9B50;
 }
 .sketch-container {
     width: auto;
